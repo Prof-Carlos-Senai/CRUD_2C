@@ -1,0 +1,137 @@
+### =========================================================================
+### TESTES DA API DO SISTEMA WEB - REST Client
+### =========================================================================
+
+### Teste se o servidor está funcionando
+GET http://localhost:3000/
+Content-Type: application/json
+
+
+### -------------------------------------------------------------------------
+### OPERAÇÕES DE USUÁRIO (CRUD Completo)
+### -------------------------------------------------------------------------
+
+### Cadastrar Usuário 1 (Ana)
+POST http://localhost:3000/usuario
+Content-Type: application/json
+
+{
+    "nome": "Ana",
+    "email": "ana@gmail.com",
+    "senha": "123"
+}
+
+### Cadastrar Usuário 2 (Bruno)
+POST http://localhost:3000/usuario
+Content-Type: application/json
+
+{
+    "nome": "Bruno",
+    "email": "bruno@gmail.com",
+    "senha": "456"
+}
+
+### Cadastrar Usuário 3 (Diego)
+POST http://localhost:3000/usuario
+Content-Type: application/json
+
+{
+    "nome": "Diego",
+    "email": "diego@gmail.com",
+    "senha": "789"
+}
+
+### Listar Todos os Usuários
+GET http://localhost:3000/usuarios
+Content-Type: application/json
+
+### Consultar Usuário por Código (ID 1 - Ana)
+GET http://localhost:3000/usuario/1
+Content-Type: application/json
+
+### Consultar Usuário por Nome
+GET http://localhost:3000/usuario/buscar/Bruno
+Content-Type: application/json
+
+### Atualizar Usuário (ID 3 - Diego trocando e-mail e senha)
+PUT http://localhost:3000/usuario/3
+Content-Type: application/json
+
+{
+    "nome": "Diego",
+    "email": "diego.novo@gmail.com",
+    "senha": "999"
+}
+
+### Excluir Usuário por ID
+DELETE http://localhost:3000/usuario/4
+Content-Type: application/json
+
+
+### -------------------------------------------------------------------------
+### OPERAÇÕES DE PRODUTO (CRUD Completo)
+### -------------------------------------------------------------------------
+
+### Cadastrar Produto 1 (Sapato Social Couro Oxford)
+POST http://localhost:3000/produto
+Content-Type: application/json
+
+{
+    "nomeProduto": "Sapato Social Couro Oxford",
+    "categoria": "SOCIAL",
+    "precoUnitario": 150.00,
+    "qtdeEstoque": 25,
+    "data": "2026-10-08"
+}
+
+### Cadastrar Produto 2 (Mocassim Couro Legítimo)
+POST http://localhost:3000/produto
+Content-Type: application/json
+
+{
+    "nomeProduto": "Mocassim Couro Legítimo",
+    "categoria": "CASUAL",
+    "precoUnitario": 650.00,
+    "qtdeEstoque": 30,
+    "data": "2026-10-08"
+}
+
+### Cadastrar Produto 3 (Bota Couro Legítimo)
+POST http://localhost:3000/produto
+Content-Type: application/json
+
+{
+    "nomeProduto": "Bota Couro Legítimo",
+    "categoria": "CASUAL",
+    "precoUnitario": 850.00,
+    "qtdeEstoque": 15,
+    "data": "2026-10-08"
+}
+
+### Listar Todos os Produtos
+GET http://localhost:3000/produtos
+Content-Type: application/json
+
+### Consultar Produto por Código (ID 1)
+GET http://localhost:3000/produto/1
+Content-Type: application/json
+
+### Consultar Produto por Nome
+GET http://localhost:3000/produto/buscar/Mocassim Couro Legítimo
+Content-Type: application/json
+
+### Atualizar Produto (ID 3 - Atualizando preço e quantidade em estoque)
+PUT http://localhost:3000/produto/3
+Content-Type: application/json
+
+{
+    "nomeProduto": "Bota Couro Legítimo",
+    "categoria": "CASUAL",
+    "precoUnitario": 899.90,
+    "qtdeEstoque": 20,
+    "data": "2026-10-08"
+}
+
+### Excluir Produto por ID
+DELETE http://localhost:3000/produto/4
+Content-Type: application/json
